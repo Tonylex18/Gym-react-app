@@ -16,7 +16,15 @@ const Testtimonials = () => {
         <span>Testimonials</span>
         <span className="strock-text">what they</span>
         <span>say about us</span>
-        <span>{testimonialsData[selected].review}</span>
+        <motion.span
+          key={selected}
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exist={{ opacity: 0, x: 100 }}
+          transition={transition}
+        >
+          {testimonialsData[selected].review}
+        </motion.span>
         <span>
           <span style={{ color: "var(--orange)" }}>
             {testimonialsData[selected].name}
@@ -35,7 +43,15 @@ const Testtimonials = () => {
           transition={{ ...transition, duration: 2 }}
           whileInView={{ opacity: 1, x: 0 }}
         ></motion.div>
-        <img src={testimonialsData[selected].image} alt="" />
+        <motion.img
+          key={selected}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exist={{ opacity: 0, x: -100 }}
+          transition={transition}
+          src={testimonialsData[selected].image}
+          alt=""
+        />
 
         <div className="arrow">
           <img

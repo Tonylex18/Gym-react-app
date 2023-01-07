@@ -94,3 +94,15 @@
 .feature>img {
     width: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+    .program-header {
+        gap: 2rem !important;
+    }
+    .plans {
+        flex-direction: column;
+    }
+    .plans> :nth-child(2) {
+        transform: none;
+    }
+}
